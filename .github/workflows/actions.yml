@@ -17,5 +17,5 @@ jobs:
         uses: astral-sh/setup-uv@v5
       - name: Install from uv.lock
         run: uv sync
-      - name: Test with python
+      - name: Download parquet file and import to duckdb
         run: uv run quick_start.py
