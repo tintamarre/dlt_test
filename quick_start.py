@@ -9,7 +9,7 @@ app = typer.Typer()
 @app.command()
 def run():
     parquet_url = "https://www.odwb.be/api/explore/v2.1/catalog/datasets/234002/exports/parquet?lang=fr&timezone=Europe%2FBrussels"
-    data = pd.read_parquet(parquet_url,
+    data = pd.read_parquet(parquet_url)
 
     pipeline = dlt.pipeline(
         pipeline_name="quick_start", 

@@ -15,5 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install the latest version of uv and set the python version
         uses: astral-sh/setup-uv@v5
-      - name: Test with python 
+      - name: Install from uv.lock
+        run: uv sync
+      - name: Test with python
         run: uv run quick_start.py
