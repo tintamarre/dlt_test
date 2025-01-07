@@ -1,21 +1,9 @@
-name: Example
-
 jobs:
-  uv-example:
-    name: python
+  test:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
-
-      - name: Install uv
+      - name: Install the latest version of uv and set the python version
         uses: astral-sh/setup-uv@v5
-
-      - name: Set up Python
-        run: uv python install
-
-      - name: Install the project
-        run: uv sync --all-extras --dev
-
-      - name: Run tests
+      - name: Test with python 
         run: uv run quick_start.py
